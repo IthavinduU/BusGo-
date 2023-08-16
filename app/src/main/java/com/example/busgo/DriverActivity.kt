@@ -36,11 +36,11 @@ class DriverActivity : AppCompatActivity() {
         routeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val selectedRoute = routeOptions[position]
-                // You can do something with the selected route here
+
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
-                // Do nothing when nothing is selected
+
             }
         }
 
