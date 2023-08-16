@@ -25,8 +25,7 @@ class ClientActivity : AppCompatActivity() {
             val searchText = searchAutoCompleteTextView.text.toString()
 
             if (searchText.isNotEmpty()) {
-                // Handle search here
-                // You can add your own logic to process the search result if needed
+
             }
 
             // Reset the search bar
