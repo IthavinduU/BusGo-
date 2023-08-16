@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/driverTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Driver Information"
+        android:textAppearance="?android:textAppearanceLarge"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:textColor="#333333" />
+
+    <EditText
+        android:id="@+id/driverNameEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Driver's Name"
+        app:layout_constraintTop_toBottomOf="@id/driverTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:id="@+id/conductorNameEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Conductor's Name"
+        app:layout_constraintTop_toBottomOf="@id/driverNameEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <RadioGroup
+        android:id="@+id/busTypeRadioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/conductorNameEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp">
+
+        <RadioButton
+            android:id="@+id/radioButtonAC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AC"
+            android:textColor="#333333" />
+
+        <RadioButton
+            android:id="@+id/radioButtonNonAC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Non AC"
+            android:textColor="#333333" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSemiLuxury"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Semi Luxury"
+            android:textColor="#333333" />
+
+        <RadioButton
+            android:id="@+id/radioButtonExpress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Express"
+            android:textColor="#333333" />
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/routeSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="491dp"
+        android:hint="Select the Route"
+        android:textColor="#333333"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/busTypeRadioGroup" />
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintTop_toBottomOf="@id/routeSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+
+    <!-- Add more views for bus number, radio group, dropdown, and phone number -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
