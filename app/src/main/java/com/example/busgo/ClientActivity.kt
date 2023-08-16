@@ -27,8 +27,6 @@ class ClientActivity : AppCompatActivity() {
             if (searchText.isNotEmpty()) {
 
             }
-
-            // Reset the search bar
             searchAutoCompleteTextView.text.clear()
         }
 
@@ -36,8 +34,6 @@ class ClientActivity : AppCompatActivity() {
             val selectedText = searchAutoCompleteTextView.text.toString()
 
             if (selectedText.isNotEmpty()) {
-                // Handle seat booking here
-                // You can add your own logic to book seats
                 val message = "Seats booked for: $selectedText"
                 Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
             } else {
