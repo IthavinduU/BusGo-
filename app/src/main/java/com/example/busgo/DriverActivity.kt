@@ -26,7 +26,7 @@ class DriverActivity : AppCompatActivity() {
         // Create an ArrayAdapter using a simple spinner layout and your route options
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, routeOptions)
 
-        // Set the layout style for the dropdown resource
+        // Set the layout style for the dropdown resources
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         // Set the adapter to the spinner
