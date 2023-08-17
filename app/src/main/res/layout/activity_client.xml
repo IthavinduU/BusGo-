@@ -63,6 +63,27 @@
     </RadioGroup>
 
     <Button
+        android:id="@+id/viewSchedulesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Schedules"
+        app:layout_constraintTop_toBottomOf="@+id/busTypeRadioGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"/>
+
+    <TextView
+        android:id="@+id/scheduleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/viewSchedulesButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text=""
+        android:textSize="16sp"/>
+
+    <Button
         android:id="@+id/bookSeatsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -74,6 +95,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/busTypeRadioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/scheduleTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
