@@ -31,18 +31,49 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"/>
 
+    <RadioGroup
+        android:id="@+id/busTypeRadioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/searchAutoCompleteTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <RadioButton
+            android:id="@+id/radioButtonRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regular" />
+
+        <RadioButton
+            android:id="@+id/radioButtonLuxury"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Luxury"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonExpress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Express"
+            android:layout_marginStart="16dp"/>
+    </RadioGroup>
+
     <Button
         android:id="@+id/bookSeatsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="124dp"
-        android:layout_marginTop="288dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="144dp"
-        android:layout_marginBottom="331dp"
+        android:layout_marginBottom="16dp"
         android:text="Book Seats"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchAutoCompleteTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/busTypeRadioGroup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
