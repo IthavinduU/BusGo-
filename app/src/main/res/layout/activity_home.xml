@@ -5,7 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"><![CDATA[
+    android:padding="16dp"
+    android:background="@android:color/white"
+    tools:ignore="ExtraText"><![CDATA[
+
+
         android:id="@+id/buttonGroup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -21,46 +25,50 @@
 
     ]]>
 
-    <Button
-        android:id="@+id/driverButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="16dp"
-        android:text="Driver"
-        app:layout_constraintBottom_toTopOf="@+id/clientButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/clientButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="7dp"
-        android:text="Client"
-        app:layout_constraintBottom_toTopOf="@+id/exitButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/driverButton" />
-
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/exitButton"
-        android:layout_width="match_parent"
+        style="@style/RoundButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="504dp"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="130dp"
         android:text="Exit"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/driverButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/driverButton"
+        style="@style/RoundButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="213dp"
+        android:text="Driver"
+        app:layout_constraintBottom_toTopOf="@+id/buttonGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clientButton" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/clientButton"
+        style="@style/RoundButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="355dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="LOGIN AS CLIENT"
+        app:layout_constraintBottom_toTopOf="@+id/driverButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
