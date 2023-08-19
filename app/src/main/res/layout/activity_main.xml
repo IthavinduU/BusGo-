@@ -24,6 +24,7 @@
 
     <Button
         android:id="@+id/loginButton"
+        style="@style/RoundButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/passwordEditText"
@@ -31,9 +32,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="259dp"
-        android:background="#FF3B00"
         android:text="Login"
-        android:textColor="#FFFFFF"
+        android:textColor="#212121"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,21 +76,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginTextView" />
 
-    <TextView
-        android:id="@+id/signUpTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="221dp"
-        android:layout_marginEnd="131dp"
-        android:layout_marginBottom="19dp"
-        android:text="BusGO @ 2023"
-        android:textColor="#29aae4"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton"
-        tools:ignore="MissingConstraints,UnknownId" />
 </androidx.constraintlayout.widget.ConstraintLayout>
