@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@android:color/white"
+    android:background="@drawable/background"
     tools:ignore="ExtraText"><![CDATA[
 
 
@@ -23,6 +23,8 @@
 
 
 
+
+
     ]]>
 
     <com.google.android.material.button.MaterialButton
@@ -30,9 +32,9 @@
         style="@style/RoundButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="177dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="78dp"
-        android:layout_marginEnd="130dp"
+        android:layout_marginEnd="150dp"
         android:layout_marginBottom="130dp"
         android:text="Exit"
         app:backgroundTint="#29aae4"
@@ -64,7 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="355dp"
+        android:layout_marginTop="250dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="LOGIN AS CLIENT"
