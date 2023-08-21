@@ -14,6 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
+        android:layout_gravity="center"
+
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
 
@@ -33,6 +35,8 @@
                 android:background="@drawable/custom_edittext"
                 android:drawablePadding="8dp"
                 android:hint="Username"
+                android:layout_gravity="center"
+
                 android:padding="8dp"
                 android:textColor="@color/black" />
 
@@ -41,6 +45,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+
                 android:background="@drawable/custom_edittext"
                 android:drawablePadding="8dp"
                 android:hint="Password"
@@ -53,21 +59,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
+                android:layout_gravity="center"
+
                 android:backgroundTint="@color/purple_500"
                 android:text="Login"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
-
-            <!-- Forgot Password Link -->
-            <TextView
-                android:id="@+id/forgotPasswordLink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="10dp"
-                android:text="Forgot Password?"
-                android:textColor="@color/purple_500"
-                android:textSize="14sp" />
 
             <!-- Sign Up Link -->
             <TextView
@@ -79,6 +76,16 @@
                 android:text="Don't have an account? Sign Up"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
+            <!-- Forgot Password Link -->
+            <TextView
+                android:id="@+id/forgotPasswordLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Forgot Password?"
+                android:textColor="@color/purple_500"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
