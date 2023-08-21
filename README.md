@@ -1,2 +1,2 @@
 # BusGO
-Demo application for bus booking
+Bus Booking application built using kotlin for a demo project. Functional frontend with few backend functions.
