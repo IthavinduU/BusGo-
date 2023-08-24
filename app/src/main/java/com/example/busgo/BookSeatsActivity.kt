@@ -83,7 +83,7 @@ class BookSeatsActivity : AppCompatActivity() {
         // Add seat price header
         val seatPriceHeader = Button(this)
         seatPriceHeader.text = "Price"
-        seatPriceHeader.setBackgroundResource(R.drawable.background1) // Set header background
+        seatPriceHeader.setBackgroundResource(R.drawable.background) // Set header background
         seatPriceHeader.setTextColor(resources.getColor(android.R.color.black, null))
         seatPriceHeader.textSize = 14f
         seatGridLayout.addView(seatPriceHeader)
