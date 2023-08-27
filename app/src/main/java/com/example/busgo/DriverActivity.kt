@@ -1,14 +1,12 @@
 package com.example.busgo
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.RadioButton
-import android.widget.Spinner
 import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class DriverActivity : AppCompatActivity() {
@@ -17,36 +15,36 @@ class DriverActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_driver)
 
-        val routeSpinner: Spinner = findViewById(R.id.routeSpinner)
+        val busNumberEditText: EditText = findViewById(R.id.busNumberEditText)
+        val numSeatsEditText: EditText = findViewById(R.id.numSeatsEditText)
         val saveButton: Button = findViewById(R.id.saveButton)
 
-        // Define your route options as an array
-        val routeOptions = arrayOf("Select the Route", "Route A", "Route B", "Route C", "Route D")
-
-        // Create an ArrayAdapter using a simple spinner layout and your route options
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, routeOptions)
-
-        // Set the layout style for the dropdown resources
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-        // Set the adapter to the spinner
-        routeSpinner.adapter = adapter
-
-        // Set a listener to handle spinner item selection
-        routeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                val selectedRoute = routeOptions[position]
-
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {
-
-            }
-        }
-
         saveButton.setOnClickListener {
-            // Show a Toast message for save successful
-            Toast.makeText(this, "Save successful", Toast.LENGTH_SHORT).show()
+            val driverName = findViewById<EditText>(R.id.driverNameEditText).text.toString()
+            val conductorName = findViewById<EditText>(R.id.conductorNameEditText).text.toString()
+            val busType = findViewById<RadioButton>(findViewById<RadioGroup>(R.id.busTypeRadioGroup).checkedRadioButtonId)?.text.toString()
+            val busNumber = busNumberEditText.text.toString()
+            val numSeats = numSeatsEditText.text.toString()
+
+            val busData = "Driver Name: $driverName\n" +
+                    "Conductor Name: $conductorName\n" +
+                    "Bus Type: $busType\n" +
+                    "Bus Number: $busNumber\n" +
+                    "Number of Seats: $numSeats"
+
+            // Display the added data in an AlertDialog
+            showDetailsDialog(busData)
         }
+    }
+
+    private fun showDetailsDialog(details: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Bus Details")
+        builder.setMessage(details)
+        builder.setPositiveButton("OK") { dialog, _ ->
+            dialog.dismiss()
+        }
+        val dialog = builder.create()
+        dialog.show()
     }
 }
