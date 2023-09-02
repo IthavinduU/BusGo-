@@ -12,6 +12,8 @@ import kotlin.random.Random
 class BookSeatsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide() //Hiding the title bar and action bar.
+
         setContentView(R.layout.activity_book_seats)
 
         val seatNumberEditText = findViewById<EditText>(R.id.seatNumberEditText)

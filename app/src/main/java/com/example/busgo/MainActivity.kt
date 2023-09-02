@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide() //Hiding the title bar and action bar.
+
         setContentView(R.layout.activity_main)
 
         val usernameEditText: EditText = findViewById(R.id.usernameEditText)

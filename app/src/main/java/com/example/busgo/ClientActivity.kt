@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity
 class ClientActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide() //Hiding the title bar and action bar.
+
         setContentView(R.layout.activity_client)
 
         val searchAutoCompleteTextView = findViewById<AutoCompleteTextView>(R.id.searchAutoCompleteTextView)

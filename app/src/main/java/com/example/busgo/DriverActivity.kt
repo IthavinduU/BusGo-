@@ -13,6 +13,9 @@ class DriverActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide() //Hiding the title bar and action bar.
+
+
         setContentView(R.layout.activity_driver)
 
         val busNumberEditText: EditText = findViewById(R.id.busNumberEditText)
