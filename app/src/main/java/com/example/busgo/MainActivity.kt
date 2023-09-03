@@ -11,9 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
 
     private val validCredentials = mapOf(
-        "user1" to "password1",
-        "user2" to "password2",
-        "user3" to "password3"
+        "Thisaraperera@gmail.com" to "12345678",
+        "Charithakatapitiya@hotmail.com" to "1234abcd",
+        "Jananichamindika@gmail.com" to "1a2b3c4d"
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
