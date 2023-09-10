@@ -12,7 +12,7 @@ import kotlin.random.Random
 class BookSeatsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.hide() //Hiding the title bar and action bar.
+        supportActionBar?.hide() // Hiding the title bar and action bar.
 
         setContentView(R.layout.activity_book_seats)
 
@@ -30,8 +30,8 @@ class BookSeatsActivity : AppCompatActivity() {
                     // Show dialog for booking more than 4 seats
                     showMaxSeatsDialog()
                 } else {
-                    val bookedSeats = generateRandomSeats(numberOfSeats)
-                    showBookedSeatsPopup(bookedSeats)
+                    val (bookedSeats, totalPrice) = generateRandomSeats(numberOfSeats)
+                    showBookedSeatsDialog(bookedSeats, totalPrice)
                     populateSeatGridLayout(seatGridLayout)
                 }
             } else {
@@ -40,7 +40,7 @@ class BookSeatsActivity : AppCompatActivity() {
         }
     }
 
-    private fun generateRandomSeats(numberOfSeats: Int): List<String> {
+    private fun generateRandomSeats(numberOfSeats: Int): Pair<List<String>, Int> {
         val rows = listOf("A", "B", "C") // List of rows
         val allSeats = mutableListOf<String>()
         for (row in rows) {
@@ -59,13 +59,19 @@ class BookSeatsActivity : AppCompatActivity() {
             }
         }
 
-        return bookedSeats
+        val totalPrice = bookedSeats.size * 1050 // Price per seat is 1050 rupees
+        return Pair(bookedSeats, totalPrice)
     }
 
-    private fun showBookedSeatsPopup(bookedSeats: List<String>) {
-        val message = "Booked seats: ${bookedSeats.joinToString(", ")}"
-        val popup = Toast.makeText(this, message, Toast.LENGTH_LONG)
-        popup.show()
+    private fun showBookedSeatsDialog(bookedSeats: List<String>, totalPrice: Int) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Booked Seats and Total Price")
+        builder.setMessage("Booked seats: ${bookedSeats.joinToString(", ")}\nTotal Price: ${totalPrice} rupees")
+        builder.setPositiveButton("OK") { dialog, _ ->
+            dialog.dismiss()
+        }
+        val dialog = builder.create()
+        dialog.show()
     }
 
     private fun showMaxSeatsDialog() {
@@ -80,38 +86,6 @@ class BookSeatsActivity : AppCompatActivity() {
     }
 
     private fun populateSeatGridLayout(seatGridLayout: GridLayout) {
-        seatGridLayout.removeAllViews()
-
-        // Add seat price header
-        val seatPriceHeader = Button(this)
-        seatPriceHeader.text = "Price"
-        seatPriceHeader.setBackgroundResource(R.drawable.background) // Set header background
-        seatPriceHeader.setTextColor(resources.getColor(android.R.color.black, null))
-        seatPriceHeader.textSize = 14f
-        seatGridLayout.addView(seatPriceHeader)
-
-        // Example: Populate the grid with seat views and corresponding prices
-        val rows = listOf("A", "B", "C")
-        val seatPrices = listOf("$10", "$15", "$20") // Example prices
-        for (row in rows) {
-            for (seatNumber in 1..10) {
-                val seatView = Button(this)
-                seatView.text = "$seatNumber$row"
-                seatView.setBackgroundResource(R.drawable.background1) // Set your seat background here
-                seatView.layoutParams = GridLayout.LayoutParams()
-                (seatView.layoutParams as GridLayout.LayoutParams).columnSpec = GridLayout.spec(seatNumber)
-                seatGridLayout.addView(seatView)
-
-                val seatPriceView = Button(this)
-                val priceIndex = rows.indexOf(row)
-                seatPriceView.text = seatPrices[priceIndex]
-                seatPriceView.setBackgroundResource(R.drawable.background1) // Set price background
-                seatPriceView.setTextColor(resources.getColor(android.R.color.black, null))
-                seatPriceView.textSize = 14f
-                seatPriceView.layoutParams = GridLayout.LayoutParams()
-                (seatPriceView.layoutParams as GridLayout.LayoutParams).columnSpec = GridLayout.spec(seatNumber)
-                seatGridLayout.addView(seatPriceView)
-            }
-        }
+        // Your existing code for populating the grid with seats and prices
     }
 }

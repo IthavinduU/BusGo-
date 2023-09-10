@@ -15,6 +15,6 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }, 3000) // Delay for 3 seconds
+        }, 1) // Delay for 3 seconds
     }
 }
